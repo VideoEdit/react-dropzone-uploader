@@ -22,11 +22,11 @@ function createConfig(entry, output) {
         },
         {
           test: /\.css$/,
-          loaders: ['style-loader', 'css-loader'],
+          use: ['style-loader', 'css-loader'],
         },
         {
           test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-          loader: 'url-loader?limit=10000',
+          use: 'url-loader?limit=10000',
         },
       ],
     },
