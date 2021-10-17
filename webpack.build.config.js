@@ -18,7 +18,6 @@ function createConfig(entry, output) {
       rules: [
         {
           test: /\.js?$/,
-          exclude: /node_modules/,
           use: 'babel-loader',
         },
         {
@@ -27,7 +26,6 @@ function createConfig(entry, output) {
         },
         {
           test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
-          exclude: /node_modules/,
           loader: 'url-loader?limit=10000',
         },
       ],
