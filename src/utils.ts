@@ -34,8 +34,8 @@ export const accepts = (file: File, accept: string) => {
 
   return accept
     .split(',')
-    .map(t => t.trim())
-    .some(type => {
+    .map((t) => t.trim())
+    .some((type) => {
       if (type.charAt(0) === '.') {
         return file.name === undefined || file.name.toLowerCase().endsWith(type.toLowerCase())
       } else if (type.endsWith('/*')) {
@@ -94,7 +94,7 @@ export const mergeStyles = (
 export const getFilesFromEvent = (
   event: React.DragEvent<HTMLElement> | React.ChangeEvent<HTMLInputElement>,
 ): Array<File | DataTransferItem> => {
-  let items: FileList | DataTransferItemList | null = null;
+  let items: FileList | DataTransferItemList | null = null
 
   if ('dataTransfer' in event) {
     const dt = event.dataTransfer
@@ -109,5 +109,5 @@ export const getFilesFromEvent = (
     items = event.target.files
   }
 
-  return Array.prototype.slice.call(items || []);
+  return Array.prototype.slice.call(items || [])
 }
