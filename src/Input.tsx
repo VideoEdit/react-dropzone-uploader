@@ -34,7 +34,7 @@ const Input = (props: IInputProps) => {
         accept={accept}
         multiple={multiple}
         disabled={disabled}
-        onChange={async e => {
+        onChange={async (e) => {
           const target = e.target
           const chosenFiles = await getFilesFromEvent(e)
           onFiles(chosenFiles)

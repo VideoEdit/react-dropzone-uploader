@@ -14,11 +14,17 @@ function createConfig(entry, output) {
     optimization: {
       minimizer: [new UglifyJSPlugin()],
     },
+    // We load react externally.
+    externals: {
+      "react": "react",
+      "react-dom" : "reactDOM"
+    },
     module: {
       rules: [
         {
           test: /\.js?$/,
           use: 'babel-loader',
+          exclude: /node_modules\/react-dropzone-uploader\/node_modules/
         },
         {
           test: /\.css$/,
@@ -27,6 +33,7 @@ function createConfig(entry, output) {
         {
           test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
           use: 'url-loader?limit=10000',
+          exclude: /node_modules\/react-dropzone-uploader\/node_modules/
         },
       ],
     },
